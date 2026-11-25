@@ -11,6 +11,15 @@
     mobileNav.hidden = expanded;
   });
 
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuButton?.getAttribute('aria-expanded') === 'true') {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+      mobileNav.hidden = true;
+      menuButton.focus();
+    }
+  });
+
   mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', 'Open navigation');
