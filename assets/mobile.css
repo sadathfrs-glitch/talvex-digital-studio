@@ -1,0 +1,305 @@
+/* Small-screen layout and touch-target refinements. */
+@media (max-width: 850px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-art {
+    width: min(100%, 560px);
+    height: 420px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .hero-art .orbit-node {
+    animation-duration: 7s;
+  }
+}
+
+@media (max-width: 680px) {
+  :root {
+    --wrap: calc(100% - 32px);
+  }
+
+  html {
+    scroll-padding-top: 78px;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    background: var(--ink);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .header-inner {
+    height: 64px;
+  }
+
+  .mobile-nav {
+    top: 64px;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:focus-visible,
+  .mobile-nav a:focus-visible,
+  .button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--lime);
+    outline-offset: 4px;
+  }
+
+  .hero {
+    padding: 28px 0 26px;
+  }
+
+  .hero-copy {
+    padding: 18px 0 0;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 13vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.07em;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-lede {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero-actions .button {
+    min-height: 52px;
+    justify-content: space-between;
+  }
+
+  .hero-actions .text-link {
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .hero-footnote {
+    margin-top: 30px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+
+  .hero-art {
+    height: 310px;
+    width: 100%;
+    overflow: hidden;
+    margin: 4px auto 0;
+  }
+
+  .orbit-one {
+    width: min(78vw, 280px);
+    height: min(78vw, 280px);
+  }
+
+  .orbit-two {
+    width: min(96vw, 360px);
+    height: 205px;
+  }
+
+  .orbit-three {
+    width: 205px;
+    height: 325px;
+  }
+
+  .art-core {
+    width: 124px;
+    height: 124px;
+  }
+
+  .node-one {
+    left: 4%;
+    top: 12%;
+  }
+
+  .node-two {
+    right: 2%;
+    top: 17%;
+  }
+
+  .node-three {
+    right: 3%;
+    bottom: 14%;
+  }
+
+  .node-four {
+    left: 2%;
+    bottom: 15%;
+  }
+
+  .art-caption {
+    bottom: 1%;
+    font-size: 8px;
+  }
+
+  .trust-inner {
+    gap: 8px 10px;
+  }
+
+  .trust-note {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .about,
+  .services,
+  .approach,
+  .contact {
+    padding-top: 72px;
+    padding-bottom: 76px;
+    padding-left: max(0px, env(safe-area-inset-left, 0px));
+    padding-right: max(0px, env(safe-area-inset-right, 0px));
+  }
+
+  .about h2,
+  .contact h2,
+  .approach h2,
+  .section-heading h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .about-copy,
+  .contact-copy {
+    min-width: 0;
+  }
+
+  .service-card {
+    min-width: 0;
+  }
+
+  .service-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .service-meta {
+    font-size: 7px;
+    flex-wrap: wrap;
+  }
+
+  .tech-line {
+    gap: 12px 16px;
+    line-height: 1.6;
+  }
+
+  .step {
+    grid-template-columns: 30px minmax(0, 1fr) 16px;
+  }
+
+  .step p {
+    font-size: 12px;
+  }
+
+  .contact-form {
+    min-width: 0;
+    padding: 22px 18px;
+  }
+
+  .contact-form label {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    min-height: 46px;
+    font-size: 16px;
+  }
+
+  .contact-form textarea {
+    min-height: 110px;
+  }
+
+  .form-hint {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .footer-bottom {
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero .eyebrow {
+    align-items: flex-start;
+    line-height: 1.6;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 12.5vw, 56px);
+  }
+
+  .service-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .service-card {
+    min-height: 0;
+    padding: 20px 18px 42px;
+  }
+
+  .service-symbol {
+    height: 62px;
+    margin: 16px 0 10px;
+  }
+
+  .service-card h3 {
+    font-size: 16px;
+  }
+
+  .service-card p {
+    max-width: 35ch;
+    font-size: 13px;
+  }
+
+  .contact-email {
+    max-width: 100%;
+    gap: 12px;
+    font-size: clamp(15px, 5vw, 18px);
+    overflow-wrap: anywhere;
+  }
+
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .orbit-node {
+    animation: none;
+  }
+}
